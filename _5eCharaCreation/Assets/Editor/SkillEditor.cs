@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Class))]
-public class ClassEditor : Editor
+[CustomEditor(typeof(SkillList))]
+public class SkillEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         if (GUILayout.Button("Open Editor"))
-            ClassEditorWindow.Open((Class)target);
+            SkillEditorWindow.Open((SkillList)target);
     }
 }
+

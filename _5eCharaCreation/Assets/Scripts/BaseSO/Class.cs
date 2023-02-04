@@ -21,6 +21,8 @@ public class Class : ScriptableObject
         set { classProperty = value; }
     }
 
+    public List<Skill> classSkills = new List<Skill>();
+
     
     
 }

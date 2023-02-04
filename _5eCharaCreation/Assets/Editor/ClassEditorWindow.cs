@@ -6,6 +6,8 @@ using UnityEditor;
 public class ClassEditorWindow : EditorWindow
 {
     Class target;
+    List<Skill> skillData = new List<Skill>();
+    List<bool> skillToggles = new List<bool>();
 
     bool[] armor = new bool[4];
     bool propretyFoldout;
@@ -15,18 +17,15 @@ public class ClassEditorWindow : EditorWindow
     {
         ClassEditorWindow window = GetWindow<ClassEditorWindow>("Class Editor");
         window.target = _class;
-        
-        
     }
 
     private void OnGUI()
     {
-
-
+        Init();
         DrawHeader();
 
         EditorGUI.indentLevel += 1;
-        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.BeginHorizontal("box");
         target.sprite = (Sprite)EditorGUILayout.ObjectField(target.sprite, typeof(Sprite), false, GUILayout.Width(256), GUILayout.Height(320));
         EditorGUILayout.BeginVertical();
         DrawTextSection();
@@ -35,12 +34,29 @@ public class ClassEditorWindow : EditorWindow
         EditorGUILayout.EndVertical();
         EditorGUILayout.EndHorizontal();
 
+        EditorGUILayout.Space(2);
+        EditorGUILayout.BeginVertical("box");
         DrawPropertiesSection();
+        EditorGUILayout.EndVertical();
+
+        EditorGUILayout.BeginVertical("box");
+        DrawSkillSection();
+        EditorGUILayout.EndVertical();
 
         EditorGUI.indentLevel -= 1;
     }
 
     #region Methods
+
+    void Init()
+    {
+        if (skillData.Count == 0)
+        {
+            SkillList asset = (SkillList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Skill List.asset", typeof(SkillList));
+            skillData = asset.content;
+        }
+
+    }
 
     void DrawHeader()
     {
@@ -123,25 +139,68 @@ public class ClassEditorWindow : EditorWindow
 
     void DrawPropertiesSection()
     {
-        EditorGUILayout.Space(20);
         propretyFoldout = EditorGUILayout.Foldout(propretyFoldout, "Class Properties");
-        Rect r1 = GUILayoutUtility.GetLastRect();
-        Rect r2 = new Rect();
         if (propretyFoldout)
         {
             EditorGUI.indentLevel += 1;
-            Debug.Log(target.ClassProperty.Length);
             EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
             for (int i = 0; i < target.ClassProperty.Length; i++)
                 DrawSingleProperty(i);
             EditorGUILayout.EndHorizontal();
-            r2 = GUILayoutUtility.GetLastRect();
-            r1.height += 8;
             EditorGUI.indentLevel -= 1;
         }
+    }
 
-        r1.height += r2.height;
-        GUI.Box(r1, "");
+    void DrawSkillSection()
+    {
+
+
+        skillFoldout = EditorGUILayout.Foldout(skillFoldout, "Class Skills");
+        if (skillFoldout)
+        {
+            if (skillToggles.Count != skillData.Count)
+            {
+                skillToggles.Clear();
+                skillToggles.AddRange(new bool[skillData.Count]);
+            }
+            LoadClassSkills();
+            EditorGUI.BeginChangeCheck();
+            EditorGUI.indentLevel += 1;
+            
+            EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+            EditorGUILayout.BeginVertical();
+
+            //int i = 0;
+            //foreach (KeyValuePair<Skill,bool> pair in classSkillDictionary)
+            //{
+            //    i++;
+            //    classSkillDictionary[pair.Key] = EditorGUILayout.Toggle(classSkillDictionary[pair.Key], pair.Key.name);
+            //    if ((i+1)%3 == 0)
+            //    {
+            //        EditorGUILayout.EndHorizontal();
+            //        EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+            //    }
+            //}
+
+            for (int i = 0; i < skillToggles.Count; i++)
+            {
+                skillToggles[i] = GUILayout.Toggle(skillToggles[i], skillData[i].name);
+                if ((i + 1) % 6 == 0)
+                {
+                    EditorGUILayout.EndVertical();
+                    EditorGUILayout.BeginVertical();
+                }
+            }
+
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.EndHorizontal();
+            EditorGUI.indentLevel -= 1;
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                WriteClassSkills();
+            }
+        }
     }
 
     void DrawSingleAbility(int i)
@@ -194,6 +253,20 @@ public class ClassEditorWindow : EditorWindow
         }
     }
 
+    void LoadClassSkills()
+    {
+        for (int i = 0; i < skillData.Count; i++)
+            skillToggles[i] = target.classSkills.Contains(skillData[i]);
+    }
+
+    void WriteClassSkills()
+    {
+        List<Skill> tempList = new List<Skill>();
+        for (int i = 0; i < skillToggles.Count; i++)
+            if (skillToggles[i])
+                tempList.Add(skillData[i]);
+        target.classSkills = tempList;
+    }
 
     #endregion
 

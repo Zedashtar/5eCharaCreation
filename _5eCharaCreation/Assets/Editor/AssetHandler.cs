@@ -15,6 +15,14 @@ public class AssetHandler
             ClassEditorWindow.Open(classObj);
             return true;
         }
+        
+
+        SkillList skillListObj = EditorUtility.InstanceIDToObject(instanceID) as SkillList;
+        if (skillListObj != null)
+        {
+            SkillEditorWindow.Open(skillListObj);
+            return true;
+        }
         return false;
     }
 }
