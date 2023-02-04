@@ -1,13 +1,13 @@
 
 Builds/
-_5eCharaCreator/Library/
-_5eCharaCreator/.vs/
-_5eCharaCreator/.vscode/
-_5eCharaCreator/Logs/
-_5eCharaCreator/obj/
-_5eCharaCreator/Temp/
-_5eCharaCreator/Builds/
-_5eCharaCreator/UserSettings/
+_5eCharaCreation/Library/
+_5eCharaCreation/.vs/
+_5eCharaCreation/.vscode/
+_5eCharaCreation/Logs/
+_5eCharaCreation/obj/
+_5eCharaCreation/Temp/
+_5eCharaCreation/Builds/
+_5eCharaCreation/UserSettings/
 
 *.csproj
 *.sln
