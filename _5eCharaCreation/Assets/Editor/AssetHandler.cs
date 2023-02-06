@@ -23,6 +23,16 @@ public class AssetHandler
             SkillEditorWindow.Open(skillListObj);
             return true;
         }
+
+
+        ToolList toolListObj = EditorUtility.InstanceIDToObject(instanceID) as ToolList;
+        if (toolListObj != null)
+        {
+            ToolEditorWindow.Open(toolListObj);
+            return true;
+        }
+
+
         return false;
     }
 }

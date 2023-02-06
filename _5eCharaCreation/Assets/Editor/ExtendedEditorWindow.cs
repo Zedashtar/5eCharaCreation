@@ -70,4 +70,5 @@ public class ExtendedEditorWindow : EditorWindow
     {
         serializedObject.ApplyModifiedProperties();
     }
+
 }

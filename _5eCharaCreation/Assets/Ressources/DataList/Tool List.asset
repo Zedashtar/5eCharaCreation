@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0d3bb54a9a2c449b582eaadb78241b, type: 3}
+  m_Name: Tool List
+  m_EditorClassIdentifier: 
+  content:
+  - name: Cor
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Cornemuse
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: "Fl\xFBte"
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: "Fl\xFBte de pan"
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Hautbois
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Luth
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Lyre
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Tambour
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Tympanion
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Violon
+    description: "Vous \xEAtes familier avec les techniques utilis\xE9es pour jouer
+      de cet instrument et connaissez quelques morceaux commun\xE9ment jou\xE9s par
+      cet instrument."
+    proficiency: 0
+    type: 1
+  - name: Instruments de navigation
+    description: "Cet ensemble d'instruments est utilis\xE9 pour naviguer en mer.
+      Si vous en ma\xEEtrisez l'utilisation, vous pouvez lire une carte, planifier
+      le trajet d'un bateau et \xE9viter de vous perdre en mer."
+    proficiency: 0
+    type: 0
+  - name: Jeux de Cartes
+    description: Votre experience de ce type de jeu vous permet d'analyser vos adversaires,
+      de tricher ou de remarquer la tricherie d'autre joueurs.
+    proficiency: 0
+    type: 3
+  - name: "Jeu de D\xE9s"
+    description: Votre experience de ce type de jeu vous permet d'analyser vos adversaires,
+      de tricher ou de remarquer la tricherie d'autre joueurs.
+    proficiency: 0
+    type: 3
+  - name: "Mat\xE9riel d'empoisonneur"
+    description: "Ce mat\xE9riel contient des fioles, des produits chimiques et tout
+      l'\xE9quipement n\xE9cessaire pour cr\xE9er des poisons."
+    proficiency: 0
+    type: 0
+  - name: "Mat\xE9riel d'herboriste"
+    description: "Ce mat\xE9riel inclut plusieurs outils diff\xE9rents, comme des
+      s\xE9cateurs, un mortier, des bourses et des flacons utilis\xE9s par les herboristes
+      pour cr\xE9er leurs rem\xE8des et leurs potions. Il est n\xE9cessaire \xE0
+      la confection d'antitoxines et de potions de soins, et aide \xE0 l'identification
+      ou l'utilisation de plantes."
+    proficiency: 0
+    type: 0
+  - name: "Mat\xE9riel d'alchimiste"
+    description: "Permet de produire des concoctions utiles comme de l'acide ou du
+      feu alchimique. Aide al'identification de potions et de compos\xE9s chimiques."
+    proficiency: 0
+    type: 2
+  - name: "Mat\xE9riel de brasseur"
+    description: "Permet de distiller de l'alcool, qu'il soit m\xE9dical ou destin\xE9
+      a la consomation, ou de rendre de l'eau potable. Votre expertise des breuvages
+      vous perment de d\xE9tecter la pr\xE9sence de poison ou autres impuret\xE9s
+      dans une boisson,ou en masquer plus facilement la pr\xE9sence, ainsi que de
+      traiter plus facilement les afflictions li\xE9es a l'alcool."
+    proficiency: 0
+    type: 2
+  - name: Outils de bricoleur
+    description: "Permet l'entretien et la r\xE9parations de la plupart des objets
+      du quotidien, du materiel d'aventure, et de l'\xE9quipement."
+    proficiency: 0
+    type: 2
+  - name: "Mat\xE9riel de calligraphie"
+    description: "Inclut de l'encre, du papier et trois plumes. Votre maitrise de
+      la caligraphie vous permet d'analyserdestextes pour tenter d'en reconna\xEEtre
+      l'auteur, immiter un style d'\xE9criture ou une signature aisi que de reconnaitre
+      plus facilement les faux documents."
+    proficiency: 0
+    type: 2
+  - name: Outils de cartographe
+    description: "Inclut une plume, de l'encre, du parchemin ainsi que des outils
+      de g\xE9om\xE9trie. Vous avez la capacit\xE9 de cr\xE9er des cartes pr\xE9cises,
+      de discerner plus facilement des informations cach\xE9es en lisant des cartes.
+      Vos connaissances en g\xE9ographie vous aident a r\xE9pondre a des questions
+      ou r\xE9soudre des probl\xE8mes concernant le terrain alentour."
+    proficiency: 0
+    type: 2
+  - name: Outils de charpentier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      contruire des structures en bois comme des maisons, des meubles simples, des
+      cabanes ou des abris de campement."
+    proficiency: 0
+    type: 2
+  - name: Outils de cordonnier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      travailler le cuir. Vous pouvez \xE9galement identifier le type de peau et
+      les techniques artisanales utilis\xE9es dans la fabrication d'un objet en cuir."
+    proficiency: 0
+    type: 2
+  - name: Ustensiles de cuisinier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      pr\xE9parer des repas savoureux et nourissants, m\xEAme avec des ingr\xE9dients
+      trouv\xE9s dans les environs. Vous pouvez donner un gout agr\xE9able a un rem\xE8de
+      d\xE9go\xFBtant, d\xE9tecter la pr\xE9sence de poison ou autres impuret\xE9s
+      dans la nourriture, ou en masquer plus facilement la pr\xE9sence."
+    proficiency: 0
+    type: 2
+  - name: "Accessoires de d\xE9guisement"
+    description: "Contient cosmetiques, teitures, v\xEAtements et accessoires pour
+      cacher son identit\xE9 ou en assumer une autre."
+    proficiency: 0
+    type: 2
+  - name: Accessoires de faussaire
+    description: "Contient diff\xE9rents types d'encres, papiers, plumes, sceaux
+      et cire, ainsi que de petits outils pour la scuplter, afin de rendre plus facile
+      la copie, l'imitation et la falsification de documents."
+    proficiency: 0
+    type: 2
+  - name: Outils de forgeron
+    description: "Vous permettnt de travailler le m\xE9tal, r\xE9parer des d\xE9gats
+      ou transformer des mati\xE8res premi\xE8res en objets, outils, armes et armures."
+    proficiency: 0
+    type: 2
+  - name: Outils de joaillier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      identifier et tailler des pierres pr\xE9cieuses anisi que pour fabriquer des
+      bijoux."
+    proficiency: 0
+    type: 2
+  - name: "Outils de ma\xE7on"
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      construire des murs et autres structures en pierre ou briques. Vous rep\xE9rez
+      plus facilement les points faibles de ce genre de structure ce qui vous permet
+      de doubler les d\xE9gats que vous leur infligez."
+    proficiency: 0
+    type: 2
+  - name: Outils de menuisier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      travailler et sculpter le bois en d\xE9tail, fabriquer des figurines ou sculpter
+      des fl\xE8ches. Vous reconnaissez plus facilement les arbres et les types de
+      bois."
+    proficiency: 0
+    type: 2
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0
+  - name: 
+    description: 
+    proficiency: 0
+    type: 0

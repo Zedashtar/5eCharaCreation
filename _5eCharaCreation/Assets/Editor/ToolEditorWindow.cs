@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class SkillEditorWindow : ExtendedEditorWindow
+public class ToolEditorWindow : ExtendedEditorWindow
 {
-    
-    public static void Open(SkillList _skillList)
+    Vector2 scrollPos;
+
+    public static void Open(ToolList _toolList)
     {
-        SkillEditorWindow window = GetWindow<SkillEditorWindow>("Skill Editor");
-        window.serializedObject = new SerializedObject(_skillList);
+        ToolEditorWindow window = GetWindow<ToolEditorWindow>("Tool Editor");
+        window.serializedObject = new SerializedObject(_toolList);
 
     }
 
@@ -17,14 +18,16 @@ public class SkillEditorWindow : ExtendedEditorWindow
     {
         if (serializedObject == null)
         {
-            EditorGUILayout.LabelField("No Skill List Selected");
+            EditorGUILayout.LabelField("No Tool List Selected");
             return;
         }
 
         currentProperty = serializedObject.FindProperty("content");
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.BeginVertical("box", GUILayout.MaxWidth(150), GUILayout.ExpandHeight(true));
+        EditorGUILayout.BeginVertical("box", GUILayout.MaxWidth(200), GUILayout.ExpandHeight(true));
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.ExpandHeight(true));
         DrawSideBar(currentProperty);
+        EditorGUILayout.EndScrollView();
         EditorGUILayout.EndVertical();
         EditorGUILayout.BeginVertical("box", GUILayout.ExpandHeight(true));
         if (selectedProperty != null)
@@ -50,7 +53,7 @@ public class SkillEditorWindow : ExtendedEditorWindow
 
         DrawField("name", true);
         EditorGUILayout.Space(5);
-        DrawField("linkedAtribute", true);
+        DrawField("type", true);
 
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space(5);

@@ -13,111 +13,153 @@ MonoBehaviour:
   m_Name: Skill List
   m_EditorClassIdentifier: 
   content:
-  - name: Bite
-    description: 
+  - name: "Athl\xE9tisme"
+    description: "La competence Athl\xE9tisme est utilis\xE9\xE9 dans des situations
+      qui demandent un effort physique comme la course prolong\xE9e, escalader, nager,
+      sauter, ..."
     linkedAtribute: 0
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: bite2
-    description: 
-    linkedAtribute: 0
+  - name: Acrobaties
+    description: "La competence Acrobaties est utilis\xE9\xE9 dans des situations
+      qui demandent de garder l'\xE9quilibre, de se faufiler dans un espace r\xE9duit
+      ou de r\xE9aliser une cascade acrobatique, une roulade ..."
+    linkedAtribute: 1
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: "Discr\xE9tion"
+    description: "La comp\xE9tence Discr\xE9tion est utilis\xE9e quand vous tentez
+      de vous cacher \xE0 l'approche de vos ennemis, ou de vous d\xE9placer sans
+      vous faire voir ou entendre."
+    linkedAtribute: 1
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Escamotage
+    description: "La comp\xE9tence Escamotage est utilis\xE9e quand vous tentez de
+      r\xE9aliser un tour de passe-passe, comme dissimuler un objet sur votre personne,
+      voler la bourse d'une autre personne ou lui glisser quelque chose dans la poche."
+    linkedAtribute: 1
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Arcanes
+    description: "La comp\xE9tence Arcanes permet de d\xE9terminer votre capacit\xE9
+      \xE0 vous rem\xE9morer vos connaissances concernant les sorts, les objets magiques,
+      les symboles mystiques, les traditions magiques, les plans d'existence et les
+      habitants de ces plans"
+    linkedAtribute: 3
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Histoire
+    description: "La comp\xE9tence Histoire permet de mesurer votre capacit\xE9 \xE0
+      vous rem\xE9morer vos connaissances concernant les \xE9v\xE9nements historiques,
+      les personnages de l\xE9gende, les royaumes antiques, les conflits pass\xE9s,
+      les guerres r\xE9centes et les civilisations perdues."
+    linkedAtribute: 3
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Investigation
+    description: "La comp\xE9tence Investigation est utilis\xE9e quand vous cherchez
+      des indices dans votre environnement, examinez un objet ou tentez d\xE9couvrir
+      une information dissimul\xE9e."
+    linkedAtribute: 3
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Nature
+    description: "La comp\xE9tence Nature permet de mesurer votre capacit\xE9 \xE0
+      vous rem\xE9morer vos connaissances des diff\xE9rents terrains, de la faune
+      et de la flore, du climat et des cycles naturels."
+    linkedAtribute: 3
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Religion
+    description: "La comp\xE9tence Religion permet de mesurer votre capacit\xE9 \xE0
+      vous rem\xE9morer vos connaissances relatives aux d\xE9it\xE9s, rites, pri\xE8res,
+      clerg\xE9s, symboles sacr\xE9s et les pratiques des cultes secrets."
+    linkedAtribute: 3
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Dressage
+    description: "La comp\xE9tence Dressage permet de deviner les intentions d'un
+      animal, tenter de le calmer ou de le domestiquer. Cette comp\xE9tence est aussi
+      utilis\xE9e pour contr\xF4ler votre monture lors d'une man\u0153uvre risqu\xE9e."
+    linkedAtribute: 4
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: "M\xE9decine"
+    description: "La comp\xE9tence M\xE9decine vous permet de de diagnostiquer une
+      maladie, traiter les malades et les bl\xE9ss\xE9s, tenter de stabiliser un
+      compagnon \xE0 l'agonie ou effectuer une autopsie."
+    linkedAtribute: 4
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Perception
+    description: "La comp\xE9tence Perception permet de tester votre attention et
+      votre sensibilit\xE9 \xE0 votre environnement et la finesse de vos sens. Elle
+      est utilis\xE9e pour tenter d'\xE9couter une conversation, remarquer des d\xE9placents
+      furtis ou tenter de rep\xE9rer des choses dissimul\xE9es ou difficiles \xE0
+      remarquer."
+    linkedAtribute: 4
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: "Perspicacit\xE9"
+    description: "La comp\xE9tence Perspicacit\xE9 permet de percevoir des indices
+      dans le langage corporel, la mani\xE8re de parler et le comportement afin dediscerner
+      les v\xE9ritables intentions d'une cr\xE9ature, si elle ment ou tenter de pr\xE9dire
+      ce qu'elle va faire."
+    linkedAtribute: 4
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Survie
+    description: "La comp\xE9tence Survie est utilis\xE9e si vous tentez de suivre
+      une piste, de chasser du gibier, de trouver des plantes commestibles, de guider
+      votre groupe \xE0 travers une for\xEAt ou un souterrain, ou d'\xE9viter des
+      dangers naturels."
+    linkedAtribute: 4
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Intimidation
+    description: "La comp\xE9tence Intimidation est utilis\xE9e quand vous tentez
+      d'influencer quelqu'un par le biais de menaces directes, d'actions hostiles
+      ou de violence."
+    linkedAtribute: 5
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Persuasion
+    description: "La comp\xE9tence Persuasion est utilis\xE9e quand vous tentez d'influencer
+      une ou plusieurs personnes en faisant preuve de tact, en faisant appel \xE0
+      l'\xE9tiquette ou \xE0 la bonne volont\xE9 de ces gens."
+    linkedAtribute: 5
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: "Repr\xE9sentation"
+    description: "La comp\xE9tence Repr\xE9sentation d\xE9termine la qualit\xE9 d'une
+      performance musicale, dans\xE9e, th\xE9\xE2trale, \xE0 un conte ou \xE0 d'autres
+      formes de divertissement et la r\xE9action de l'auditoire."
+    linkedAtribute: 5
     proficiency: 0
     score: 0
     skillPick: 0
-  - name: 
-    description: 
-    linkedAtribute: 0
+  - name: Supercherie
+    description: "La comp\xE9tence Supercherie permet de d\xE9terminer si vous parvenez
+      \xE0 dissimuler la v\xE9rit\xE9 de mani\xE8re convaincante, verbalement ou
+      par vos actions. "
+    linkedAtribute: 5
     proficiency: 0
     score: 0
     skillPick: 0
