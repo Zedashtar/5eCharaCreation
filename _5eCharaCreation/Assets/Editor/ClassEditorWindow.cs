@@ -13,6 +13,8 @@ public class ClassEditorWindow : EditorWindow
     bool propretyFoldout;
     bool skillFoldout;
 
+    Vector2 scrollPos;
+
     public static void Open(Class _class)
     {
         ClassEditorWindow window = GetWindow<ClassEditorWindow>("Class Editor");
@@ -24,10 +26,11 @@ public class ClassEditorWindow : EditorWindow
         Init();
         DrawHeader();
 
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.ExpandHeight(true));
         EditorGUI.indentLevel += 1;
         EditorGUILayout.BeginHorizontal("box");
         target.sprite = (Sprite)EditorGUILayout.ObjectField(target.sprite, typeof(Sprite), false, GUILayout.Width(256), GUILayout.Height(320));
-        EditorGUILayout.BeginVertical();
+        EditorGUILayout.BeginVertical(GUILayout.Width(728));
         DrawTextSection();
         DrawAbilitiesSection();
         DrawArmorSection();
@@ -35,15 +38,17 @@ public class ClassEditorWindow : EditorWindow
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.Space(2);
-        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.BeginVertical("box", GUILayout.Width(993));
         DrawPropertiesSection();
         EditorGUILayout.EndVertical();
-
-        EditorGUILayout.BeginVertical("box");
+        EditorGUILayout.Space(2);
+        EditorGUILayout.BeginVertical("box", GUILayout.Width(993));
         DrawSkillSection();
         EditorGUILayout.EndVertical();
+        EditorGUILayout.Space(2);
 
         EditorGUI.indentLevel -= 1;
+        EditorGUILayout.EndScrollView();
     }
 
     #region Methods
@@ -71,13 +76,13 @@ public class ClassEditorWindow : EditorWindow
 
     void DrawTextSection()
     {
-        EditorGUILayout.BeginVertical();
+        EditorGUILayout.BeginVertical("box", GUILayout.Width(720));
         EditorGUI.indentLevel += 1;
         EditorGUILayout.Space(5);
         EditorGUILayout.LabelField("Alternate Name");
 
         EditorGUILayout.BeginHorizontal(GUILayout.Width(700));
-        target.altName = EditorGUILayout.TextField(target.altName, GUILayout.Width(370));
+        target.altName = EditorGUILayout.TextField(target.altName,GUILayout.Width(370));
         EditorGUILayout.Space(10);
         EditorGUILayout.LabelField("Base HP", GUILayout.Width(80));
         target.baseHP = EditorGUILayout.IntField(target.baseHP, GUILayout.Width(60));
@@ -101,7 +106,7 @@ public class ClassEditorWindow : EditorWindow
         for (int i = 0; i < 3; i++)
             DrawSingleAbility(i);
         EditorGUILayout.EndVertical();
-
+        EditorGUILayout.Space(60);
         EditorGUILayout.BeginVertical();
         for (int i = 3; i < 6; i++)
             DrawSingleAbility(i);
@@ -158,6 +163,8 @@ public class ClassEditorWindow : EditorWindow
         skillFoldout = EditorGUILayout.Foldout(skillFoldout, "Class Skills");
         if (skillFoldout)
         {
+            EditorGUILayout.Space(10);
+            EditorGUI.indentLevel += 1;
             if (skillToggles.Count != skillData.Count)
             {
                 skillToggles.Clear();
@@ -168,26 +175,17 @@ public class ClassEditorWindow : EditorWindow
             EditorGUI.indentLevel += 1;
             
             EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+            GUILayout.FlexibleSpace();
             EditorGUILayout.BeginVertical();
-
-            //int i = 0;
-            //foreach (KeyValuePair<Skill,bool> pair in classSkillDictionary)
-            //{
-            //    i++;
-            //    classSkillDictionary[pair.Key] = EditorGUILayout.Toggle(classSkillDictionary[pair.Key], pair.Key.name);
-            //    if ((i+1)%3 == 0)
-            //    {
-            //        EditorGUILayout.EndHorizontal();
-            //        EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
-            //    }
-            //}
 
             for (int i = 0; i < skillToggles.Count; i++)
             {
-                skillToggles[i] = GUILayout.Toggle(skillToggles[i], skillData[i].name);
+                skillToggles[i] = GUILayout.Toggle(skillToggles[i], skillData[i].name, GUILayout.Width(140));
+                EditorGUILayout.Space(2);
                 if ((i + 1) % 6 == 0)
                 {
                     EditorGUILayout.EndVertical();
+                    GUILayout.FlexibleSpace();
                     EditorGUILayout.BeginVertical();
                 }
             }
@@ -200,6 +198,7 @@ public class ClassEditorWindow : EditorWindow
             {
                 WriteClassSkills();
             }
+            EditorGUI.indentLevel -= 1;
         }
     }
 
@@ -212,7 +211,7 @@ public class ClassEditorWindow : EditorWindow
         ability.ST_proficiency = GUILayout.Toggle(ability.ST_proficiency, "");
         EditorGUILayout.LabelField(GetAbilityTag(i), GUILayout.Width(70));
         ability.weight = EditorGUILayout.FloatField(ability.weight, GUILayout.Width(45));
-        EditorGUILayout.LabelField("Weight");
+        EditorGUILayout.LabelField("Weight", GUILayout.Width(80));
 
         EditorGUILayout.EndHorizontal();
     }
