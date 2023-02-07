@@ -12,3 +12,214 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b335c870061c84d4eb49c14a5d15a1b1, type: 3}
   m_Name: Weapon List
   m_EditorClassIdentifier: 
+  content:
+  - name: "B\xE2ton"
+    damageDice: 2
+    damageType: 2
+    range: 1
+    type: 0
+    properties: 256
+  - name: Dague
+    damageDice: 1
+    damageType: 1
+    range: 4
+    type: 0
+    properties: 56
+  - name: Gourdin
+    damageDice: 1
+    damageType: 2
+    range: 1
+    type: 0
+    properties: 32
+  - name: Hachette
+    damageDice: 2
+    damageType: 0
+    range: 4
+    type: 0
+    properties: 48
+  - name: Javeline
+    damageDice: 2
+    damageType: 1
+    range: 6
+    type: 0
+    properties: 16
+  - name: Lance
+    damageDice: 2
+    damageType: 1
+    range: 4
+    type: 0
+    properties: 272
+  - name: "Marteau l\xE9ger"
+    damageDice: 1
+    damageType: 2
+    range: 4
+    type: 0
+    properties: 48
+  - name: Masse d'armes
+    damageDice: 2
+    damageType: 2
+    range: 1
+    type: 0
+    properties: 0
+  - name: Massue
+    damageDice: 3
+    damageType: 2
+    range: 1
+    type: 0
+    properties: 1
+  - name: Serpe
+    damageDice: 1
+    damageType: 0
+    range: 1
+    type: 0
+    properties: 32
+  - name: "Arbal\xE8te l\xE9g\xE8re"
+    damageDice: 3
+    damageType: 1
+    range: 16
+    type: 0
+    properties: 645
+  - name: Arc court
+    damageDice: 2
+    damageType: 1
+    range: 16
+    type: 0
+    properties: 641
+  - name: "Fl\xE9chettes"
+    damageDice: 1
+    damageType: 1
+    range: 4
+    type: 0
+    properties: 24
+  - name: Fronde
+    damageDice: 1
+    damageType: 2
+    range: 6
+    type: 0
+    properties: 640
+  - name: Cimeterre
+    damageDice: 2
+    damageType: 0
+    range: 1
+    type: 1
+    properties: 40
+  - name: Coutille
+    damageDice: 4
+    damageType: 0
+    range: 2
+    type: 1
+    properties: 67
+  - name: "\xC9p\xE9e \xE0 deux mains"
+    damageDice: 6
+    damageType: 0
+    range: 1
+    type: 1
+    properties: 65
+  - name: "\xC9p\xE9e courte"
+    damageDice: 2
+    damageType: 1
+    range: 1
+    type: 1
+    properties: 40
+  - name: "\xC9p\xE9e longue"
+    damageDice: 3
+    damageType: 0
+    range: 1
+    type: 1
+    properties: 256
+  - name: "Fl\xE9au"
+    damageDice: 3
+    damageType: 2
+    range: 1
+    type: 1
+    properties: 0
+  - name: Fouet
+    damageDice: 1
+    damageType: 0
+    range: 2
+    type: 1
+    properties: 10
+  - name: "Hache \xE0 deux mains"
+    damageDice: 5
+    damageType: 0
+    range: 1
+    type: 1
+    properties: 65
+  - name: Hache d'armes
+    damageDice: 3
+    damageType: 0
+    range: 1
+    type: 1
+    properties: 256
+  - name: Hallebarde
+    damageDice: 4
+    damageType: 0
+    range: 2
+    type: 1
+    properties: 67
+  - name: Marteau de guerre
+    damageDice: 4
+    damageType: 2
+    range: 1
+    type: 1
+    properties: 256
+  - name: Merlin
+    damageDice: 6
+    damageType: 2
+    range: 1
+    type: 1
+    properties: 65
+  - name: Morgenstern
+    damageDice: 3
+    damageType: 1
+    range: 1
+    type: 1
+    properties: 0
+  - name: Pic de guerre
+    damageDice: 3
+    damageType: 1
+    range: 1
+    type: 1
+    properties: 0
+  - name: Pique
+    damageDice: 4
+    damageType: 1
+    range: 2
+    type: 1
+    properties: 67
+  - name: "Rapi\xE8re"
+    damageDice: 3
+    damageType: 1
+    range: 1
+    type: 1
+    properties: 8
+  - name: Trident
+    damageDice: 2
+    damageType: 1
+    range: 4
+    type: 1
+    properties: 272
+  - name: "Arbal\xE8te de poing"
+    damageDice: 2
+    damageType: 1
+    range: 6
+    type: 1
+    properties: 676
+  - name: "Arbal\xE8te lourde"
+    damageDice: 4
+    damageType: 1
+    range: 20
+    type: 1
+    properties: 197
+  - name: Arc long
+    damageDice: 3
+    damageType: 1
+    range: 30
+    type: 1
+    properties: 705
+  - name: Sarbacane
+    damageDice: 0
+    damageType: 1
+    range: 5
+    type: 1
+    properties: 644

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 public class ClassEditorWindow : EditorWindow
 {
@@ -9,9 +10,16 @@ public class ClassEditorWindow : EditorWindow
     List<Skill> skillData = new List<Skill>();
     List<bool> skillToggles = new List<bool>();
 
+    List<Weapon> weaponData = new List<Weapon>();
+    List<Weapon> simpleWeapons = new List<Weapon>();
+    List<Weapon> warWeapons = new List<Weapon>();
+    List<bool> simpleWeaponsToggles = new List<bool>();
+    List<bool> warWeaponsToggles = new List<bool>();
+
     bool[] armor = new bool[4];
     bool propretyFoldout = true;
     bool skillFoldout = true;
+    bool weaponFoldout = true;
 
     bool b_thievesTool;
     Tool thievesTool;
@@ -53,10 +61,15 @@ public class ClassEditorWindow : EditorWindow
         DrawSkillSection();
         EditorGUILayout.EndVertical();
         EditorGUILayout.Space(2);
+        EditorGUILayout.BeginVertical("box", GUILayout.Width(993));
+        DrawWeaponSection();
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.Space(2);
 
         EditorGUI.indentLevel -= 1;
         EditorGUILayout.EndScrollView();
     }
+
 
     #region Methods
 
@@ -66,6 +79,12 @@ public class ClassEditorWindow : EditorWindow
         {
             SkillList skillAsset = (SkillList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Skill List.asset", typeof(SkillList));
             skillData = skillAsset.content;
+        }
+
+        if (skillToggles.Count != skillData.Count)
+        {
+            skillToggles.Clear();
+            skillToggles.AddRange(new bool[skillData.Count]);
         }
 
         ToolList toolAsset = (ToolList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Tool List.asset", typeof(ToolList));
@@ -79,6 +98,43 @@ public class ClassEditorWindow : EditorWindow
             if (tool.name == "Matériel d'herboriste")
                 herbalistKit = tool;
         }
+
+        if (weaponData.Count == 0)
+        {
+            WeaponList weaponAsset = (WeaponList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Weapon List.asset", typeof(WeaponList));
+            weaponData = weaponAsset.content;
+        }
+
+        if (simpleWeapons.Count == 0)
+        {
+            foreach (Weapon weapon in weaponData)
+            {
+                if (weapon.type == Weapon.Type.Simple)
+                    simpleWeapons.Add(weapon);
+            }
+        }
+
+        if (warWeapons.Count == 0)
+        {
+            foreach (Weapon weapon in weaponData)
+            {
+                if (weapon.type == Weapon.Type.War)
+                    warWeapons.Add(weapon);
+            }
+        }
+
+        if (simpleWeaponsToggles.Count != simpleWeapons.Count)
+        {
+            simpleWeaponsToggles.Clear();
+            simpleWeaponsToggles.AddRange(new bool[simpleWeapons.Count]);
+        }
+        if (warWeaponsToggles.Count != warWeapons.Count)
+        {
+            warWeaponsToggles.Clear();
+            warWeaponsToggles.AddRange(new bool[warWeapons.Count]);
+        }
+
+
 
 
     }
@@ -185,11 +241,7 @@ public class ClassEditorWindow : EditorWindow
         {
             EditorGUILayout.Space(10);
             EditorGUI.indentLevel += 1;
-            if (skillToggles.Count != skillData.Count)
-            {
-                skillToggles.Clear();
-                skillToggles.AddRange(new bool[skillData.Count]);
-            }
+
             LoadClassSkills();
             LoadClassTools();
             EditorGUI.BeginChangeCheck();
@@ -242,6 +294,72 @@ public class ClassEditorWindow : EditorWindow
                 WriteClassSkills();
                 WriteClassTools();
             }
+            EditorGUI.indentLevel -= 1;
+        }
+    }
+
+    private void DrawWeaponSection()
+    {
+        weaponFoldout = EditorGUILayout.Foldout(propretyFoldout, "Class Weapons");
+        if (weaponFoldout)
+        {
+            EditorGUI.indentLevel += 1;
+            LoadClassWeapons();
+            EditorGUILayout.Space(20);
+            EditorGUI.BeginChangeCheck();
+            EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("All", EditorStyles.miniButton))
+                for (int i = 0; i < simpleWeaponsToggles.Count; i++)
+                    simpleWeaponsToggles[i] = true;
+            if (GUILayout.Button("None", EditorStyles.miniButton))
+                for (int i = 0; i < simpleWeaponsToggles.Count; i++)
+                    simpleWeaponsToggles[i] = false;
+            EditorGUILayout.LabelField("Simple Weapons", EditorStyles.boldLabel);
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("All", EditorStyles.miniButton))
+                for (int i = 0; i < warWeaponsToggles.Count; i++)
+                    warWeaponsToggles[i] = true;
+            if (GUILayout.Button("None", EditorStyles.miniButton))
+                for (int i = 0; i < warWeaponsToggles.Count; i++)
+                    warWeaponsToggles[i] = false;
+            EditorGUILayout.LabelField("War Weapons", EditorStyles.boldLabel);
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.Space(20);
+
+            EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.BeginVertical();
+            for (int i = 0; i < simpleWeaponsToggles.Count; i++)
+            {
+                simpleWeaponsToggles[i] = GUILayout.Toggle(simpleWeaponsToggles[i], simpleWeapons[i].name, GUILayout.Width(140));
+                EditorGUILayout.Space(2);
+            }
+            EditorGUILayout.EndVertical();
+
+
+ 
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.BeginVertical();
+            for (int i = 0; i < warWeaponsToggles.Count; i++)
+            {
+                warWeaponsToggles[i] = GUILayout.Toggle(warWeaponsToggles[i], warWeapons[i].name, GUILayout.Width(140));
+                EditorGUILayout.Space(2);
+            }
+            EditorGUILayout.EndVertical();
+            
+            GUILayout.FlexibleSpace();
+
+            EditorGUILayout.EndHorizontal();
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                WriteClassWeapons();
+            }
+
             EditorGUI.indentLevel -= 1;
         }
     }
@@ -343,6 +461,28 @@ public class ClassEditorWindow : EditorWindow
 
         target.classTools = tempList;
 
+    }
+
+    void LoadClassWeapons()
+    {
+        for (int i = 0; i < simpleWeapons.Count; i++)
+            simpleWeaponsToggles[i] = target.classWeapons.Contains(simpleWeapons[i]);
+        for (int i = 0; i < warWeapons.Count; i++)
+            warWeaponsToggles[i] = target.classWeapons.Contains(warWeapons[i]);
+    }
+
+    void WriteClassWeapons()
+    {
+        List<Weapon> tempList = new List<Weapon>();
+        for (int i = 0; i < simpleWeaponsToggles.Count; i++)
+            if (simpleWeaponsToggles[i])
+                tempList.Add(simpleWeapons[i]);
+
+        for (int i = 0; i < warWeaponsToggles.Count; i++)
+            if (warWeaponsToggles[i])
+                tempList.Add(warWeapons[i]);
+
+        target.classWeapons = tempList;
     }
     #endregion
 

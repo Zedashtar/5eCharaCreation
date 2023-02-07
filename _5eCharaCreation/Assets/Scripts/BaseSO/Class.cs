@@ -28,6 +28,9 @@ public class Class : ScriptableObject
     public int artisanSkillToken;
     public int musicSkillToken;
     public int mixedSkillToken;
+
+
+    public List<Weapon> classWeapons = new List<Weapon>();
     
 
     
