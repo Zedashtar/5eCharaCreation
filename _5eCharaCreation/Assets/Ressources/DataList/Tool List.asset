@@ -143,8 +143,10 @@ MonoBehaviour:
     type: 2
   - name: Outils de cordonnier
     description: "Vous disposez des outils et des comp\xE9tences necessaires pour
-      travailler le cuir. Vous pouvez \xE9galement identifier le type de peau et
-      les techniques artisanales utilis\xE9es dans la fabrication d'un objet en cuir."
+      fabriquer chaussures et bottes. Vous pouvez entretenir des bottes pour faciliter
+      le voyage a pied du porter, les modifier pour y ajouter des compartiments cach\xE9s
+      et identifier plus facilement les propri\xE9t\xE9s magiques d'une paire de
+      bottes."
     proficiency: 0
     type: 2
   - name: Ustensiles de cuisinier
@@ -191,27 +193,42 @@ MonoBehaviour:
       bois."
     proficiency: 0
     type: 2
-  - name: 
-    description: 
+  - name: "Mat\xE9riel de peintre"
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      peindre. Votre expertise de l'art vous aide a d\xE9couvrir des informations
+      en examinant une oeuvre d'art comme une peinture ou une fresque murale."
     proficiency: 0
-    type: 0
-  - name: 
-    description: 
+    type: 2
+  - name: Outils de potier
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      confectionner des objets en c\xE9ramique. Votre expertise vous aide a identifier
+      ce genre d'objets."
     proficiency: 0
-    type: 0
-  - name: 
-    description: 
+    type: 2
+  - name: Outils de souffleur de verre
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      confectionner des objets en verre. Vous identifiez plus facilement les objets
+      de ce type et les potions contenues dans un r\xE9cipient en verre.  Vous rep\xE9rez
+      plus facilement les points faibles des structures en verre, ce qui vous permet
+      de doubler les d\xE9gats que vous leur infligez."
     proficiency: 0
-    type: 0
-  - name: 
-    description: 
+    type: 2
+  - name: Outils de tanneur
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      travailler le cuir. Vous pouvez \xE9galement identifier le type de peau et
+      les techniques artisanales utilis\xE9es dans la fabrication d'objets et d'\xE9quipement
+      en cuir."
     proficiency: 0
-    type: 0
-  - name: 
-    description: 
+    type: 2
+  - name: Outils de tisserand
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      confectionner des v\xEAtements et autres objets en tissu. Vous pouvez r\xE9parer
+      ou identifier ce type d'objet plus facilement."
     proficiency: 0
-    type: 0
-  - name: 
-    description: 
+    type: 2
+  - name: Outils de voleur
+    description: "Vous disposez des outils et des comp\xE9tences necessaires pour
+      crochetter serrures et cadenas. Vous pouvez \xE9galement amorcer ou d\xE9samorcer
+      des pi\xE8ges et vous les d\xE9tectez plus facilement."
     proficiency: 0
     type: 0
