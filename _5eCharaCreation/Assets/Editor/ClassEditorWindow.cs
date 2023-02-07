@@ -10,8 +10,15 @@ public class ClassEditorWindow : EditorWindow
     List<bool> skillToggles = new List<bool>();
 
     bool[] armor = new bool[4];
-    bool propretyFoldout;
-    bool skillFoldout;
+    bool propretyFoldout = true;
+    bool skillFoldout = true;
+
+    bool b_thievesTool;
+    Tool thievesTool;
+    bool b_tinkersTool;
+    Tool tinkersTool;
+    bool b_herbalistKit;
+    Tool herbalistKit;
 
     Vector2 scrollPos;
 
@@ -25,7 +32,7 @@ public class ClassEditorWindow : EditorWindow
     {
         Init();
         DrawHeader();
-
+        
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.ExpandHeight(true));
         EditorGUI.indentLevel += 1;
         EditorGUILayout.BeginHorizontal("box");
@@ -57,9 +64,22 @@ public class ClassEditorWindow : EditorWindow
     {
         if (skillData.Count == 0)
         {
-            SkillList asset = (SkillList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Skill List.asset", typeof(SkillList));
-            skillData = asset.content;
+            SkillList skillAsset = (SkillList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Skill List.asset", typeof(SkillList));
+            skillData = skillAsset.content;
         }
+
+        ToolList toolAsset = (ToolList)AssetDatabase.LoadAssetAtPath("Assets/Ressources/DataList/Tool List.asset", typeof(ToolList));
+        List<Tool> tempList = toolAsset.content;
+        foreach (Tool tool in tempList)
+        {
+            if (tool.name == "Outils de voleur")
+                thievesTool = tool;
+            if (tool.name == "Outils de bricoleur")
+                tinkersTool = tool;
+            if (tool.name == "Matériel d'herboriste")
+                herbalistKit = tool;
+        }
+
 
     }
 
@@ -171,6 +191,7 @@ public class ClassEditorWindow : EditorWindow
                 skillToggles.AddRange(new bool[skillData.Count]);
             }
             LoadClassSkills();
+            LoadClassTools();
             EditorGUI.BeginChangeCheck();
             EditorGUI.indentLevel += 1;
             
@@ -194,9 +215,32 @@ public class ClassEditorWindow : EditorWindow
             EditorGUILayout.EndHorizontal();
             EditorGUI.indentLevel -= 1;
 
+            EditorGUILayout.Space(40);
+
+            EditorGUILayout.BeginHorizontal(GUILayout.Width(964));
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.BeginVertical();
+            b_thievesTool = GUILayout.Toggle(b_thievesTool, "Thieves' Tool", GUILayout.Width(140));
+            EditorGUILayout.Space(2);
+            b_tinkersTool = GUILayout.Toggle(b_tinkersTool, "Tinker's Tool", GUILayout.Width(140));
+            EditorGUILayout.Space(2);
+            b_herbalistKit = GUILayout.Toggle(b_herbalistKit, "Herbalist Kit", GUILayout.Width(140));
+            EditorGUILayout.Space(2);
+            EditorGUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.BeginVertical();
+            target.artisanSkillToken = EditorGUILayout.IntField("Artisan Skill Tokens", target.artisanSkillToken);
+            target.musicSkillToken = EditorGUILayout.IntField("Music Skill Tokens", target.musicSkillToken);
+            target.mixedSkillToken = EditorGUILayout.IntField("Mixed Skill Tokens", target.mixedSkillToken);
+            EditorGUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.EndHorizontal();
+
+
             if (EditorGUI.EndChangeCheck())
             {
                 WriteClassSkills();
+                WriteClassTools();
             }
             EditorGUI.indentLevel -= 1;
         }
@@ -267,6 +311,39 @@ public class ClassEditorWindow : EditorWindow
         target.classSkills = tempList;
     }
 
+    void LoadClassTools()
+    {
+        b_thievesTool = false;
+        b_tinkersTool = false;
+        b_herbalistKit = false;
+        if(target.classTools.Count != 0)
+        {
+            foreach (Tool tool in target.classTools)
+            {
+                if (tool.name == "Outils de voleur") { }
+                    b_thievesTool = true;
+                if (tool.name == "Outils de bricoleur")
+                    b_tinkersTool = true;
+                if (tool.name == "Matériel d'herboriste")
+                    b_herbalistKit = true;
+            }
+        }
+    }
+
+    void WriteClassTools()
+    {
+        List<Tool> tempList = new List<Tool>();
+
+        if (b_thievesTool)
+            tempList.Add(thievesTool);
+        if (b_tinkersTool)
+            tempList.Add(tinkersTool);
+        if (b_herbalistKit)
+            tempList.Add(herbalistKit);
+
+        target.classTools = tempList;
+
+    }
     #endregion
 
 

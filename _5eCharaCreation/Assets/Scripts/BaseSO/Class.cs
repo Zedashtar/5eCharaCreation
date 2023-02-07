@@ -22,6 +22,13 @@ public class Class : ScriptableObject
     }
 
     public List<Skill> classSkills = new List<Skill>();
+    public List<Tool> classTools = new List<Tool>();
+
+
+    public int artisanSkillToken;
+    public int musicSkillToken;
+    public int mixedSkillToken;
+    
 
     
     

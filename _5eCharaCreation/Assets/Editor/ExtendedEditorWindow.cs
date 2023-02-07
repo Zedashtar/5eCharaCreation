@@ -45,6 +45,7 @@ public class ExtendedEditorWindow : EditorWindow
             if (GUILayout.Button(p.displayName))
             {
                 selectedPropertyPath = p.propertyPath;
+                
             }
         }
 

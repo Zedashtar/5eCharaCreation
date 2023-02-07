@@ -32,6 +32,13 @@ public class AssetHandler
             return true;
         }
 
+        WeaponList weaponListObj = EditorUtility.InstanceIDToObject(instanceID) as WeaponList;
+        if (weaponListObj != null)
+        {
+            WeaponEditorWindow.Open(weaponListObj);
+            return true;
+        }
+
 
         return false;
     }
